@@ -1,0 +1,25 @@
+.colorsin{
+    border-radius:50%; 
+    border:1px solid black;
+    width: 10px;
+    height: 10px;
+    background-color: blueviolet;
+}
+
+.flex-papa{
+    display: flex;
+    flex-direction: row;
+}
+
+.product-card{
+    box-shadow: 1px 2px 1px 2px;
+    /* border-color:grey; */
+    padding: 5px;
+    transition:all .3s ease;
+    margin: 5px;
+    background: white;
+}
+.product-card:hover{
+    transform: scale(1.03);
+    box-shadow: 5px 3px 5px 3px;
+}

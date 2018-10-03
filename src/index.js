@@ -3,8 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'antd/dist/antd.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+//1.- traemos el tipo de router que queremos
+import {BrowserRouter} from 'react-router-dom'
+//2.- instalamos el router (wrapper)
+const WithRouter = () =><BrowserRouter><App/></BrowserRouter>
+//3.- sustituimos el componente
+ReactDOM.render(<WithRouter />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

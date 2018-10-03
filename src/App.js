@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Routes from './Routes';
+import { NavLink, withRouter } from 'react-router-dom'
+import {Button} from 'antd'
 
 class App extends Component {
+
+  logOut = () => {
+    localStorage.removeItem('user')
+    this.props.history.push('/login')
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="pollollon">
+
+        <nav>
+          <NavLink activeClassName="ihatemyboss" exact to="/">Inicio</NavLink>  
+          <NavLink activeClassName="ihatemyboss" to="/login">Login</NavLink>  
+          <NavLink activeClassName="ihatemyboss" to="/new">Nuevo produto</NavLink> 
+          <Button type="dashed" onClick={this.logOut} >Cerrar sesión</Button> 
+        </nav> 
+
+        <Routes/>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
